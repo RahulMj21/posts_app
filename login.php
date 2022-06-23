@@ -24,13 +24,14 @@ if (isset($_POST["submit"])) {
       $response = mysqli_query($conn, $sql);
       $result = mysqli_fetch_row($response);
     } catch (Exception  $err) {
-      echo "<p style='color:red'> Error : wrong email or password" . $err->getMessage() . "</p>";
+      echo "<p class='toast error'> Error : wrong email or password" . $err->getMessage() . "</p>";
     }
     if (password_verify($password, $result[2])) {
+      echo "<p class='toast'> Success : Logged in successfully</p>";
       $_SESSION["user_id"] = $result[0];
       header("Location:/posts_app/index.php");
     } else {
-      echo "<p style='color:red'> Error : wrong email or password" . mysqli_error($conn) . "</p>";
+      echo "<p class='toast error'> Error : wrong email or password" . mysqli_error($conn) . "</p>";
     }
   }
 }

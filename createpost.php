@@ -26,7 +26,7 @@ if (isset($_POST["submit"])) {
         header("Location:/posts_app/index.php");
       }
     } catch (Exception  $err) {
-      echo "<p style='color:red'> Error : " . $err->getMessage() . "</p>";
+      echo "<p class='toast error'> Error : " . $err->getMessage() . "</p>";
     }
   }
 }

@@ -6,7 +6,8 @@ try {
   $response = mysqli_query($conn, $sql);
   $posts = mysqli_fetch_all($response, MYSQLI_ASSOC);
 } catch (Exception $err) {
-  echo "Error : " . $err->getMessage();
+  // $msg=$err->getMessage();
+  echo "<p class='toast error'>Error : '$err->getMessage()'</p>";
 }
 ?>
 

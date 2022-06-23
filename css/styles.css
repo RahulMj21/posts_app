@@ -91,6 +91,18 @@ section {
 .btn-primary:active {
   transform: scale(0.98);
 }
+.toast {
+  padding-top: 0.7rem;
+  width: 50rem;
+  max-width: 90%;
+  margin: 0 auto;
+  height: 3rem;
+  text-align: center;
+  color: var(--success);
+}
+.toast.error {
+  color: var(--danger);
+}
 
 /* header --------------------------------------------> */
 .header {
